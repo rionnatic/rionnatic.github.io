@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">
+	<title>‎‎ </title>
+	<script>
+		var date = new Date(Date.UTC(2026,7,9,12)).getTime();
+		var x = setInterval(function() {
+			var now = new Date().getTime();
+			var time = date - now;
+			var d = Math.floor(time / (1000 * 60 * 60 * 24));
+			var h = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var m = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+			var s = Math.floor((time % (1000 * 60)) / 1000);
+			document.getElementById("89").innerHTML = d + " : " + h + " : "  + m + " : " + s;
+			if (time < 0) {
+				clearInterval(x);
+				document.getElementById("89").innerHTML = "0 : 0 : 0 : 0";
+			}
+  		}, 1000);
+	</script>
+	<style>
+  		p {
+			text-align: center;
+			line-height: 90vh;
+			font-family: helvetica;
+			pointer-events: none;
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+<p id="89"></p>
+</body>
+</html>
